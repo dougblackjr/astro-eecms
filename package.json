@@ -1,0 +1,14 @@
+{
+  "name": "astro-eecms",
+  "version": "1.0.0",
+  "description": "Connect ExpressionEngine to Astro with the help of Bones",
+  "keywords": ["expressionengine", "astro", "bones", "cms", "connector"],
+  "license": "ISC",
+  "author": "tripleNERDscore",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
