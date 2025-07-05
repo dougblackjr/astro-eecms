@@ -1,11 +1,21 @@
-const { fetchEntries, fetchCategories, fetchNav } = require('./bones');
+import { get } from './fetch.js';
 
-(async () => {
-  const entries = await fetchEntries();
-  const categories = await fetchCategories();
-  const nav = await fetchNav();
+export function createBonesClient({ apiUrl, apiKey }) {
+  if (!apiUrl || !apiKey) {
+    throw new Error('Bones API URL and API Key are required');
+  }
 
-  console.log('Entries:', entries.length);
-  console.log('Categories:', categories.length);
-  console.log('Navigation:', nav.length);
-})();
+  const baseParams = { api_key: apiKey };
+
+  return {
+    async fetchEntries(params = {}) {
+      return get(`${apiUrl}/entries`, { ...baseParams, ...params });
+    },
+    async fetchCategories(params = {}) {
+      return get(`${apiUrl}/categories`, { ...baseParams, ...params });
+    },
+    async fetchNav(params = {}) {
+      return get(`${apiUrl}/structure`, { ...baseParams, ...params });
+    }
+  };
+}
