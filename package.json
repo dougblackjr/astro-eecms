@@ -4,6 +4,8 @@
   "description": "Connect ExpressionEngine to Astro with the help of Bones",
   "keywords": ["expressionengine", "astro", "bones", "cms", "connector"],
   "license": "ISC",
+  "type": "module",
+  "exports": { ".": "./index.js" },
   "author": "tripleNERDscore",
   "license": "MIT",
   "type": "commonjs",

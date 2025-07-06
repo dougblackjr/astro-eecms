@@ -1,4 +1,4 @@
-import { get } from './fetch.js';
+import { get } from './utils/fetch.js';
 
 export function createBonesClient({ apiUrl, apiKey }) {
   if (!apiUrl || !apiKey) {

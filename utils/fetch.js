@@ -1,22 +1,11 @@
-async function get(url, params = {}) {
-  try {
-    // Convert params object to query string
-    const query = new URLSearchParams(params).toString();
-    const fullUrl = query ? `${url}?${query}` : url;
+export async function get(url, params = {}) {
+  const query = new URLSearchParams(params).toString();
+  const fullUrl = query ? `${url}?${query}` : url;
 
-    const response = await fetch(fullUrl);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error(`Fetch error for ${url}:`, error.message);
-    return null;
+  const response = await fetch(fullUrl);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch: ${response.statusText}`);
   }
-}
 
-module.exports = {
-  get,
-};
+  return await response.json();
+}
