@@ -16,6 +16,9 @@ export function createBonesClient({ apiUrl, apiKey }) {
     },
     async fetchNav(params = {}) {
       return get(`${apiUrl}/structure`, { ...baseParams, ...params });
+    },
+    async fetchVars(params = {}) {
+      return get(`${apiUrl}/variables`, { ...baseParams, ...params });
     }
   };
 }
