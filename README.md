@@ -25,9 +25,36 @@ npm install /path/to/your/astro-eecms
 Create a `.env` file in your project root with:
 
 ```env
-BONES_API_URL=https://your-site.com/bones/api
+BONES_API_URL=https://your-site.com/api
 BONES_API_KEY=your-bones-api-key
 ```
+
+In addition, in your ExpressionEngine site, you'll need to set up four templates with each call, assuming your template group (i.e. `api.group`.
+
+### entries.html
+
+```
+{exp:bones:entries}
+```
+
+### categories.html
+
+```
+{exp:bones:categories}
+```
+
+### structure.html
+
+```
+{exp:bones:nav}
+```
+
+### variables.html
+
+```
+{exp:bones:variables}
+```
+
 
 ---
 
